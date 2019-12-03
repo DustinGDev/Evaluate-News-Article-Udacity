@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+                Logo
+            </div>
+            <div class="">
+                navigation
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <label for="url">Type in a URL to the text you want to analyse</label>
+                    <input id="url" type="text" name="input" value="" placeholder="URL">
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
+                </form>
+            <section>
+
+            <section>
+                <strong>Analysis Results:</strong>
+                <ul>
+                    <li>
+                        <h4>Text Polarity:</h3>
+                        <p id="polarity"></p>
+                        <h4>Confidence:</h4>
+                        <p id="polarity_confidence"></p>
+                    </li>
+                    <li>
+                        <h4>Text Subjectivity:</h3>
+                        <p id="subjectivity"></p>
+                        <h4>Confidence:</h4>
+                        <p id="subjectivity_confidence"></p>
+                    </li>
+                    <li>
+                        <h3>Text:</h3>
+                        <p id="nlp-text"></p>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+
+        <script>
+            // Check for service worker support
+            if ('serviceWorker' in navigator) {
+              // Use the window load event to keep the page load performant
+              window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+              });
+            }
+          </script>
+
+    </body>
+</html>
