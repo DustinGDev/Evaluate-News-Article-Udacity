@@ -11,7 +11,7 @@ function handleSubmit(event) {
     }
 
     console.log("::: Form Submitted :::")
-    fetch('http://localhost:8081/sentiment-analysis', {
+    fetch('//localhost:8081/sentiment-analysis', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
