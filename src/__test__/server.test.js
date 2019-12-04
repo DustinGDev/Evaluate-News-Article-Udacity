@@ -1,14 +1,15 @@
 const request = require('supertest');
 const server = require('../server/index');
+const mockResponse = require('../server/mockAPI');
 
-describe('POST /sentiment-analysis', () => {
+describe('POST /test', () => {
     it('responds with json', function(done) {
       request(server)
-        .post('/sentiment-analysis')
-        .send({url: 'https://www.youtube.com/'})
+        .get('/test')
         .set('Accept', 'application/json')
         .expect(200)
         .end(function(err, res) {
+          expect(res.body).toEqual(mockResponse);
           if (err) return done(err);
           done();
         });
